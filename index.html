@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Journey Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="status" id="status">
+        <span class="status-dot"></span>
+        Connecting...
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>AI Journey Simulator</h1>
+            <p>Real-time AI-powered Customer Journey Simulator for E-Commerce</p>
+        </div>
+
+        <div class="demo-grid">
+            <!-- Left: Checkout Simulation -->
+            <div class="card">
+                <h2>
+                    <span class="card-icon">🛒</span>
+                    Checkout Simulation
+                </h2>
+                
+                <div class="control-group">
+                    <label>Cart Value</label>
+                    <input type="range" id="cartValue" min="20" max="500" value="100" step="10">
+                    <span class="slider-value" id="cartValueDisplay">$100</span>
+                </div>
+                
+                <div class="control-group">
+                    <label>Device</label>
+                    <select id="device">
+                        <option value="mobile">📱 Mobile</option>
+                        <option value="desktop">💻 Desktop</option>
+                        <option value="tablet">📟 Tablet</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label>Traffic Source</label>
+                    <select id="trafficSource">
+                        <option value="organic">🔍 Organic Search</option>
+                        <option value="ads">📢 Paid Ads</option>
+                        <option value="email">📧 Email</option>
+                        <option value="social">👥 Social Media</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label>Hesitation Level</label>
+                    <select id="hesitation">
+                        <option value="1">Low (1 view)</option>
+                        <option value="2" selected>Medium (2 views)</option>
+                        <option value="3">High (3 views)</option>
+                        <option value="4">Very High (4 views)</option>
+                    </select>
+                </div>
+
+                <div class="checkout-mockup">
+                    <div class="product-item">
+                        <div class="product-image">👟</div>
+                        <div class="product-info">
+                            <h3>Running Shoes</h3>
+                            <p>Size: 10, Color: Blue</p>
+                        </div>
+                        <div class="product-price">$<span id="price1">60</span></div>
+                    </div>
+                    
+                    <div class="product-item">
+                        <div class="product-image">👕</div>
+                        <div class="product-info">
+                            <h3>Sports T-Shirt</h3>
+                            <p>Size: L, Color: Black</p>
+                        </div>
+                        <div class="product-price">$<span id="price2">40</span></div>
+                    </div>
+                    
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span class="amount" id="totalPrice">$100.00</span>
+                    </div>
+
+                    <div class="intervention-banner" id="interventionBanner"></div>
+
+                    <button class="checkout-button" onclick="triggerCheckout()">
+                        Complete Purchase
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right: ML Predictions - REDESIGNED -->
+            <div class="card">
+                <h2>
+                    <span class="card-icon">🧠</span>
+                    ML Model Predictions
+                </h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="value" id="conversionProb">--</div>
+                        <div class="label">Conversion</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" id="expectedValue">--</div>
+                        <div class="label">Expected Value</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" id="interventionCost">--</div>
+                        <div class="label">Cost</div>
+                    </div>
+                </div>
+
+                <div class="predictions-section">
+                    <h3>Intervention Analysis</h3>
+                    <div id="allPredictions" class="loading-state">
+                        <div class="icon">🎯</div>
+                        <p>Loading predictions...<br>Adjust settings to see ML adapt in real-time</p>
+                    </div>
+                </div>
+
+                <button class="trigger-button" onclick="getPrediction()">
+                    ↻ Refresh Prediction
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
