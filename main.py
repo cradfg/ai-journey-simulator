@@ -220,7 +220,7 @@ INTERVENTIONS = [
     {'type': 'none', 'msg': '', 'cost': 0},
     {'type': 'discount_5', 'msg': '🎉 5% OFF - Complete now!', 'cost_pct': 0.05},
     {'type': 'discount_10', 'msg': '🔥 10% OFF - Limited time!', 'cost_pct': 0.10},
-    {'type': 'free_shipping', 'msg': '📦 FREE SHIPPING - 10 mins!', 'cost': 10.0},
+    {'type': 'free_shipping', 'msg': '📦 FREE SHIPPING - 10 mins!', 'cost': 500.0},
     {'type': 'urgency', 'msg': '⏰ Only 3 left - Order now!', 'cost': 0},
 ]
 
