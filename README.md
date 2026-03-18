@@ -17,9 +17,10 @@ Accuracy: 71.7%
 Prediction time: Under 100ms
 
 Quick Start
-bashpip install -r requirements.txt
-python main.py
-Then open index.html in your browser.
+Firstly clone the repo locally and then,
+pip install -r requirements.txt (to install all the required dependecies)
+python main.py (for setting up and running the server)
+Then open index.html in your browser. (to view the frontend ui)
 
 How It Works
 The system evaluates 5 interventions (none, 5% off, 10% off, free shipping, urgency) and selects the one with highest expected value using:
